@@ -1,0 +1,23 @@
+    function SignForm(props) {
+      const [signupValue, setSignupValue] = useState({
+        phone: "",
+        email: "",
+        id: "",
+        password: "",
+      });
+
+      const signupClicked = (e) => {
+        
+        fetch(SIGNUP, {
+          method: "POST",
+          body: JSON.stringify({
+            account: id,
+            password,
+            ...(phone ? { phone } : {}),
+            ...(email ? { email } : {}),
+          }),
+        })
+      };
+    }
+
+    export default SignForm;
